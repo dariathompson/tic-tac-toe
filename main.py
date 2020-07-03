@@ -30,16 +30,30 @@ def isWinner(bo, letter):
 	(bo[3] == letter and bo[5] == letter and bo[7] == letter))
     
 def playerMove():
-    pass
+    run = True
+    while run:
+        move = input('Please select a position to place an \'X\' (1-9): ')
+        try:
+            move = int(move)
+            if move > 0 and move < 10:
+                if spaceIsFree(move):
+                    run = False
+                    insertLetter('X', move)
+                else:
+                    printBoard('Sorry, this place is occupied')
+            else:
+                print('Please type a number between 1 and 9')
+        except:
+            print('Please type a number')
 
 def compMove():
     pass
 
 def isBoardFull(board):
     if board.count(' ') > 1:
-        return True
-    else:
         return False
+    else:
+        return True
 
 def main():
     print('Welcome to Tic Tac Toe!')
