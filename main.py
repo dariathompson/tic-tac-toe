@@ -38,6 +38,14 @@ def isBoardFull(board):
 def main():
     print('Welcome to Tic Tac Toe!')
     printBoard(board)
+    while not(isBoardFull(board)):
+        if not(isWinner(board, 'O')):
+            playerMove()
+            printBoard(board)
+        else:
+            print('Sorry, O\'s won this time!')
     
+    if isBoardFull(board):
+        print('Tie Game!')   
    
 main()
