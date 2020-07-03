@@ -32,6 +32,9 @@ def isWinner(bo, letter):
 def playerMove():
     pass
 
+def compMove():
+    pass
+
 def isBoardFull(board):
     pass
 
@@ -44,6 +47,14 @@ def main():
             printBoard(board)
         else:
             print('Sorry, O\'s won this time!')
+            break
+        
+        if not(isWinner(board, 'X')):
+            compMove()
+            printBoard(board)
+        else:
+            print('You won!')
+            break
     
     if isBoardFull(board):
         print('Tie Game!')   
