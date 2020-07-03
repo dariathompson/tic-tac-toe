@@ -20,11 +20,11 @@ def printBoard(board):
     print('   |   |')
     
 def isWinner(bo, letter):
-    return(bo[7] == letter and bo[8] == letter and bo[9] == letter) or
+    return((bo[7] == letter and bo[8] == letter and bo[9] == letter) or
 	(bo[4] == letter and bo[5] == letter and bo[6] == letter) or
 	(bo[1] == letter and bo[2] == letter and bo[3] == letter) or
     (bo[1] == letter and bo[4] == letter and bo[7] == letter) or
 	(bo[2] == letter and bo[5] == letter and bo[8] == letter) or
 	(bo[3] == letter and bo[6] == letter and bo[9] == letter) or
     (bo[1] == letter and bo[5] == letter and bo[9] == letter) or
-	(bo[3] == letter and bo[5] == letter and bo[7] == letter)
+	(bo[3] == letter and bo[5] == letter and bo[7] == letter))
