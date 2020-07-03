@@ -8,4 +8,4 @@ def spaceIsFree(pos):
 
 def printBoard(board):
     print('  |  |')
-    print(' ' + board[1] + ' ')
+    print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
