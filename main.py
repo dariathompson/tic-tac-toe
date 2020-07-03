@@ -28,3 +28,16 @@ def isWinner(bo, letter):
 	(bo[3] == letter and bo[6] == letter and bo[9] == letter) or
     (bo[1] == letter and bo[5] == letter and bo[9] == letter) or
 	(bo[3] == letter and bo[5] == letter and bo[7] == letter))
+    
+def playerMove():
+    pass
+
+def isBoardFull(board):
+    pass
+
+def main():
+    print('Welcome to Tic Tac Toe!')
+    printBoard(board)
+    
+   
+main()
