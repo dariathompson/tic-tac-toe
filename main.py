@@ -47,7 +47,8 @@ def playerMove():
             print('Please type a number')
 
 def compMove():
-    pass
+    possibleMoves = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
+    move = 0
 
 def isBoardFull(board):
     if board.count(' ') > 1:
