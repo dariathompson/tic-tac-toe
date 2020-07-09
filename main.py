@@ -49,6 +49,40 @@ def playerMove():
 def compMove():
     possibleMoves = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
     move = 0
+    
+    for letter in ['O', 'X']:
+        for i in possibleMoves:
+            boardCopy = board[:] # clone of the board
+            boardCopy[i] = letter
+            if isWinner(boardCopy, letter):
+                move = i
+                return move
+    cornersOpen = []
+    for i in possibleMoves:
+        if i in [1, 3, 7, 9]:
+            cornersOpen.append(i)
+    if len(cornersOpen) > 0:
+        move = selectRandom(cornersOpen)
+        return move
+    
+    if 5 in possibleMoves:
+        move = 5
+        return move
+    
+    edgesOpen = []
+    for i in possibleMoves:
+        if i in [2, 4, 6, 8]:
+            cornersOpen.append(i)
+    if len(edgesOpen) > 0:
+        move = selectRandom(edgesOpen)
+    
+    return move  
+    
+def selectRandom(li):
+    import random
+    ln = len(li)
+    r = random.randrange(0, ln)
+    return li[r]
 
 def isBoardFull(board):
     if board.count(' ') > 1:
